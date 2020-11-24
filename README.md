@@ -9,4 +9,4 @@ Em seguida, digite `python3` para abrir o servidor que estará rodando na seguin
 
 ## Como testar
 
-Os testes estão localizados na pasta __tests__. Para testar,  digite no terminal o seguinte comando: `pytest. Ou caso não funcione: `python3 -m pytest`
+Os testes estão localizados na pasta __tests__. Para testar,  digite no terminal o seguinte comando: `pytest`. Ou caso não funcione: `python3 -m pytest`
