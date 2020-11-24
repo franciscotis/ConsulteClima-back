@@ -14,8 +14,9 @@ def test_busca_informacoes_corretas():
     dados = {
         'cidade': 'Feira de Santana'
     }
-    response = client.get('/checar',headers= dados)
-    assert response.get_json()['count'] ==1 and response.status_code == 200
+    headers = {'content-type': 'application/json'}
+    response = client.post('/checar', data=json.dumps(dados), headers= headers)
+    assert response.status_code == 200
 
 def test_retorno_nenhuma_informacao():
     #A API deve retornar o status 500 caso a cidade informada não esteja disponível
@@ -23,5 +24,6 @@ def test_retorno_nenhuma_informacao():
     dados = {
         'cidade': 'ABCDEF'
     }
-    response = client.get('/checar',headers= dados)
+    headers = {'content-type': 'application/json'}
+    response = client.post('/checar', data=json.dumps(dados), headers= headers)
     assert response.status_code == 500
